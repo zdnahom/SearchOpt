@@ -1,12 +1,12 @@
 databases:
-  - name: SearchOpt
-    databaseName: SearchOpt
+  - name: searchopt
+    databaseName: searchopt
     user: zdnahom
     plan: free
 
 services:
   - type: web
-    name: SearchOpt
+    name: searchopt
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
@@ -15,7 +15,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: SearchOpt
+          name: searchopt
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
